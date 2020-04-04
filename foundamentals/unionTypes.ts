@@ -12,6 +12,8 @@ interface Int2 {
 }
 type InterfaceMix = Int1 | Int2;
 
+//One attribute or the other one or both are accepted
+
 const interfaceMix1: InterfaceMix = {
     prop1: 1,
 };

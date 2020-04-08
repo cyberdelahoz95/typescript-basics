@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 #Added by Henry
-.env
+environment.local.ts

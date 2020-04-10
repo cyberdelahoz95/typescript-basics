@@ -4,5 +4,5 @@ export interface Team {
     $key?: string;
     name: string;
     country: Country;
-    player: Player[];
+    players: Player[];
 }

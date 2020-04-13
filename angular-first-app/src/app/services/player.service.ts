@@ -4,6 +4,16 @@ import { Player } from '../interfaces/player';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+export const PlayersTableHeaders = [
+    'Name',
+    'Last Name',
+    'Position',
+    'Weight',
+    'Height',
+    'Nationality',
+    'Left Footer',
+];
+
 @Injectable({
     providedIn: 'root',
 })

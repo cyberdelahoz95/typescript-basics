@@ -1,0 +1,23 @@
+<div id="open-modal" class="modal-window">
+    <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+        <h1>New Player Form</h1>
+        <div>
+            <form
+                #playerForm="ngDorm"
+                novalidate
+                (ngSubmit)="onSubmit(playerForm)"
+            >
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        [(ngModel)]="player?.name"
+                        class="form-control"
+                    />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

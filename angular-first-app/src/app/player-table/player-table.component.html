@@ -27,7 +27,9 @@
                     <td>{{ player.nationality }}</td>
                     <td>{{ player.leftFooted }}</td>
                     <td>
-                        <button>Edit</button>
+                        <button class="submit" (click)="editPlayer(player)">
+                            Edit
+                        </button>
                         <button>Delete</button>
                     </td>
                 </tr>

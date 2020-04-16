@@ -1,7 +1,7 @@
 <div id="open-modal" class="modal-window">
     <div>
         <a href="#" title="Close" class="modal-close">Close</a>
-        <h1>New Player Form</h1>
+        <h1>{{ player ? "Edit Player Form" : "New Player Form" }}</h1>
         <div>
             <form
                 #playerForm="ngForm"
@@ -14,7 +14,7 @@
                         type="text"
                         name="name"
                         class="form-control"
-                        #name="ngModel"
+                        [ngModel]="player?.name"
                         ngModel
                         required
                     />
@@ -26,7 +26,7 @@
                         type="text"
                         name="lastName"
                         class="form-control"
-                        #lastName="ngModel"
+                        [ngModel]="player?.lastName"
                         ngModel
                         required
                     />
@@ -37,7 +37,7 @@
                     <select
                         name="position"
                         class="form-control"
-                        #position="ngModel"
+                        [ngModel]="player?.position"
                         ngModel
                         required
                     >
@@ -56,7 +56,7 @@
                         type="text"
                         name="weight"
                         class="form-control"
-                        #weight="ngModel"
+                        [ngModel]="player?.weight"
                         ngModel
                         required
                     />
@@ -68,7 +68,7 @@
                         type="text"
                         name="height"
                         class="form-control"
-                        #height="ngModel"
+                        [ngModel]="player?.height"
                         ngModel
                         required
                     />
@@ -79,7 +79,7 @@
                     <select
                         name="nationality"
                         class="form-control"
-                        #nationality="ngModel"
+                        [ngModel]="player?.nationality"
                         ngModel
                         required
                     >
@@ -98,7 +98,7 @@
                         type="checkbox"
                         name="leftFooted"
                         class="form-control checkbox"
-                        #leftFooted="ngModel"
+                        [ngModel]="player?.leftFooted"
                         ngModel
                         required
                     />

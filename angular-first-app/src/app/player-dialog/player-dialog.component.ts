@@ -67,9 +67,23 @@ export class PlayerDialogComponent implements OnInit {
             key: this.player.$key,
         };
         delete playerFormValueWithFormattedKey.$key;
-        const modifiedPlayers = this.team.players ? this.team.players.map(player => {
-            return player.key === this.player.$key ? playerFormValueWithFormattedKey : player;
-        })
+        const modifiedPlayers = this.team.players
+            ? this.team.players.map((player) => {
+                  return player.key === this.player.$key
+                      ? playerFormValueWithFormattedKey
+                      : player;
+              })
+            : this.team.players;
+        const formattedTeam = {
+            ...this.team,
+            players: [
+                ...(modifiedPlayers
+                    ? modifiedPlayers
+                    : [playerFormValueWithFormattedKey]),
+            ],
+        };
+        this.playerService.editPlayer(playerFormValueWithKey);
+        this.teamService.editTeam(formattedTeam);
     }
 
     onSubmit(playerForm: NgForm) {
@@ -80,7 +94,11 @@ export class PlayerDialogComponent implements OnInit {
                     ? false
                     : playerFormValue.leftFooted;
         }
-        this.newPlayer(playerFormValue);
+        if (this.player) {
+            this.editPlayer(playerFormValue);
+        } else {
+            this.newPlayer(playerFormValue);
+        }
         window.location.replace('#');
     }
 
